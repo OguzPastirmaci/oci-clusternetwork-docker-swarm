@@ -1,0 +1,15 @@
+---
+- name: Install yum-utils if necessary.
+  yum:
+    name: yum-utils
+    state: present
+
+- name: Add ol7_addons repository
+  become: true
+  yum_repository:
+    name: ol7_addons
+    description: Oracle Linux $releasever Add ons ($basearch)
+    baseurl: http://yum.oracle.com/repo/OracleLinux/OL7/addons/$basearch/
+    enabled: 1
+    gpgcheck: 1
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle

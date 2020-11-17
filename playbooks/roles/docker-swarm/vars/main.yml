@@ -1,0 +1,18 @@
+---
+docker_architecture:
+  x86_64: "amd64"
+
+# Docker CE stable release repository
+ol7_addons:
+  name: "docker-engine"
+  yum_repo: "http://yum.oracle.com/repo/OracleLinux/OL7/addons/$basearch/"
+  yum_gpg_key: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle"
+  yum_gpg_check: "yes"
+
+# Name of the SSH Deamon
+ssh_daemon: sshd
+
+python_sni_pip_dependencies:
+  - pyopenssl
+  - ndg-httpsclient
+  - pyasn1
